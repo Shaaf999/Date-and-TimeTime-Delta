@@ -1,0 +1,21 @@
+#time_format = Day dd Mon yyyy hh:mm:ss +xxxx
+#time_format= '%a %d %b %Y %H:%M:%S %z'
+# day--> %a | date= %d | month= %b | year= %Y --->LOWERCASE y wil give error | hours:minutes:seconds = :H:M:S | Timezone = % z
+
+
+
+
+
+def time_delta(t1, t2):
+    time_format= '%a %d %b %Y %H:%M:%S %z'
+    ti1=datetime.strptime(t1,time_format)
+    ti2=datetime.strptime(t2,time_format)
+    return int(abs(ti1-ti2).total_seconds())
+
+
+t = int(input())
+for i in range(t):
+    t1 = input()
+
+    t2 = input()
+    print(time_delta(t1,t2))
